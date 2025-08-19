@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sagar K S | Portfolio</title>
+  <style>
+    :root {
+      --primary: #64ffda;
+      --bg: #0a192f;
+      --bg-light: #112240;
+      --text-light: #ccd6f6;
+      --text-dark: #8892b0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text-light);
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-light);
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+      z-index: 100;
+    }
+    nav a {
+      color: var(--text-dark);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--primary); }
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-light);
+    }
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #e6f1ff;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn:hover {
+      background: var(--primary);
+      color: var(--bg);
+    }
+    section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: var(--text-dark);
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <img src="profile.jpg" alt="Sagar K S" class="profile-pic">
+    <h1>Sagar Kachappilly Sabu</h1>
+    <p>Software Engineer • Full-Stack Developer • Frappe Guru</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Seasoned software developer specializing in Frappe, Vue.js, React Native, and full-stack web automation. Passionate about crafting clean UI/UX and solving complex business problems with simple, effective solutions.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Frappe Framework</li>
+      <li>JavaScript (Vue.js, React Native), Python, HTML/CSS</li>
+      <li>Agile Team Leadership & Workflow Automation</li>
+      <li>Linux Admin, Networking, Infrastructure Management</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <h3>Software Developer — Ideenkreise Tech Pvt Ltd (Mar 2023 – Present)</h3>
+    <p>Leading full-stack development using Frappe; overseeing project delivery and team coordination.</p>
+    <h3>Software Developer — Ideenkreise Tech Pvt Ltd (Nov 2019 – Sept 2021)</h3>
+    <p>Developed front-end mobile/web interfaces using React Native and Vue.js.</p>
+    <h3>System Administrator — Holy Cross Multi-Speciality Hospital (Aug 2016 – Oct 2019)</h3>
+    <p>Managed IT infrastructure, including servers, networking, and security systems.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Note Approval System (Nitta Gelatin India Ltd.)</strong> – Workflow-based approval tool handling financial and administrative notes.</li>
+      <li><strong>Expense Manager (Eastern)</strong> – Migrated Vue.js app to Frappe with backend logic and mobile syncing.</li>
+      <li><strong>CRM & Project Management (Faboolux Interiors)</strong> – Automation for leads, follow-ups, and project workflows.</li>
+      <li><strong>Crop Management App</strong> – React Native app with offline capabilities and server sync.</li>
+      <li><strong>AR Advertisement App</strong> – Unity-based AR app delivering immersive ad experiences.</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>Diploma in Computer Engineering</strong><br>Government Polytechnic College, Kerala, India (2013–2016)</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sagarkachappilly@gmail.com" style="color:var(--primary)">sagarkachappilly@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/sagar-k-s-1bab56198" target="_blank" style="color:var(--primary)">linkedin.com/in/sagar-k-s-1bab56198</a></p>
+    <p>Phone: +91 77361 05735</p>
+  </section>
+
+  <footer>
+    © 2025 Sagar Kachappilly Sabu — Built with HTML, CSS & JS
+  </footer>
+</body>
+</html>
