@@ -1,172 +1,796 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sagar K S | Portfolio</title>
-  <style>
-    :root {
-      --primary: #64ffda;
-      --bg: #0a192f;
-      --bg-light: #112240;
-      --text-light: #ccd6f6;
-      --text-dark: #8892b0;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text-light);
-      scroll-behavior: smooth;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--bg-light);
-      display: flex;
-      justify-content: center;
-      padding: 0.5rem;
-      z-index: 100;
-    }
-    nav a {
-      color: var(--text-dark);
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover { color: var(--primary); }
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background: var(--bg-light);
-    }
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid var(--primary);
-      object-fit: cover;
-      margin-bottom: 1.5rem;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      color: #e6f1ff;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: var(--text-dark);
-      margin-bottom: 1.5rem;
-    }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-    }
-    .btn:hover {
-      background: var(--primary);
-      color: var(--bg);
-    }
-    section {
-      max-width: 800px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-    h2 {
-      font-size: 1.8rem;
-      border-bottom: 2px solid var(--primary);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      color: var(--text-dark);
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      color: var(--text-dark);
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Kachappilly Sabu - Full Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+            position: relative;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-info h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .profile-info .title {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 20px 30px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: #34495e;
+            color: #3498db;
+        }
+
+        .nav-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #3498db;
+        }
+
+        .section {
+            display: none;
+            padding: 60px 40px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            border-radius: 2px;
+        }
+
+        .summary-text {
+            font-size: 1.2em;
+            line-height: 1.8;
+            text-align: center;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .experience-timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #3498db, #9b59b6);
+            border-radius: 2px;
+        }
+
+        .experience-item {
+            background: white;
+            margin: 40px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            width: calc(50% - 30px);
+        }
+
+        .experience-item:nth-child(odd) {
+            margin-left: 0;
+        }
+
+        .experience-item:nth-child(even) {
+            margin-left: calc(50% + 30px);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #3498db;
+        }
+
+        .experience-item:nth-child(odd)::before {
+            right: -40px;
+        }
+
+        .experience-item:nth-child(even)::before {
+            left: -40px;
+        }
+
+        .experience-date {
+            color: #9b59b6;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .experience-title {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .experience-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+        }
+
+        .project-title {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .project-client {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            border: 1px solid #dee2e6;
+        }
+
+        .education-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .education-degree {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .education-years {
+            color: #9b59b6;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .education-institution {
+            color: #3498db;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .interests-section {
+            text-align: center;
+        }
+
+        .interests-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .interest-item {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 30px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .interest-item:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .interest-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .interest-name {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .profile-info h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .nav-btn {
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .experience-timeline::before {
+                left: 20px;
+            }
+
+            .experience-item {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+
+            .experience-item::before {
+                left: -40px !important;
+            }
+
+            .interests-icons {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-image">SK</div>
+                <div class="profile-info">
+                    <h1>Sagar Kachappilly Sabu</h1>
+                    <div class="title">Full Stack Developer & Frappe Framework Specialist</div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">📧 sagarkachappilly@gmail.com</div>
+                <div class="contact-item">📱 +91 7736105735</div>
+                <div class="contact-item">🔗 LinkedIn Profile</div>
+                <div class="contact-item">📍 Kerala, India</div>
+            </div>
+        </header>
 
-  <header>
-    <img src="profile.jpg" alt="Sagar K S" class="profile-pic">
-    <h1>Sagar Kachappilly Sabu</h1>
-    <p>Software Engineer • Full-Stack Developer • Frappe</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </header>
+        <div class="main-content">
+            <nav>
+                <div class="nav-container">
+                    <button class="nav-btn active" onclick="showSection('about')">About</button>
+                    <button class="nav-btn" onclick="showSection('skills')">Skills</button>
+                    <button class="nav-btn" onclick="showSection('experience')">Experience</button>
+                    <button class="nav-btn" onclick="showSection('projects')">Projects</button>
+                    <button class="nav-btn" onclick="showSection('education')">Education</button>
+                    <button class="nav-btn" onclick="showSection('interests')">Interests</button>
+                </div>
+            </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Seasoned software developer specializing in Frappe, Vue.js, React Native, and full-stack web automation. Passionate about crafting clean UI/UX and solving complex business problems with simple, effective solutions.</p>
-  </section>
+            <section id="about" class="section active">
+                <h2>About Me</h2>
+                <div class="summary-text">
+                    I am an experienced Software Engineer with a passion for developing innovative front-end and back-end solutions using modern frameworks. Currently working as a Team Lead and Full Stack Developer, I specialize in the Frappe Framework and excel at bringing an outside-of-the-box approach to complex problems. My expertise lies in identifying challenges early and creating effective, budget-conscious solutions that keep projects on track and deliver exceptional results.
+                </div>
+            </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Frappe Framework</li>
-      <li>JavaScript (Vue.js, React Native), Python, HTML/CSS</li>
-      <li>Agile Team Leadership & Workflow Automation</li>
-      <li>System Admin, Networking, Infrastructure Management</li>
-    </ul>
-  </section>
+            <section id="skills" class="section">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>🚀 Frameworks & Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Frappe Framework</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Unity Studio</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>💻 Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>📱 Development Areas</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Full Stack Development</span>
+                            <span class="skill-tag">Mobile Applications</span>
+                            <span class="skill-tag">Web Applications</span>
+                            <span class="skill-tag">AR Development</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>🎯 Methodologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile Development</span>
+                            <span class="skill-tag">Team Leadership</span>
+                            <span class="skill-tag">System Administration</span>
+                            <span class="skill-tag">Workflow Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <h3>Software Developer — Ideenkreise Tech Pvt Ltd (Mar 2023 – Present)</h3>
-    <p>Leading full-stack development using Frappe; overseeing project delivery and team coordination.</p>
-    <h3>Software Developer — Ideenkreise Tech Pvt Ltd (Nov 2019 – Sept 2021)</h3>
-    <p>Developed front-end mobile/web interfaces using React Native and Vue.js.</p>
-    <h3>System Administrator — Holy Cross Multi-Speciality Hospital (Aug 2016 – Oct 2019)</h3>
-    <p>Managed IT infrastructure, including servers, networking, and security systems.</p>
-  </section>
+            <section id="experience" class="section">
+                <h2>Professional Experience</h2>
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="experience-date">March 2023 - Present</div>
+                        <div class="experience-title">Software Developer</div>
+                        <div class="experience-company">Ideenkreise Tech Pvt Ltd, Muvattupuzha</div>
+                        <div class="experience-description">
+                            Working as a Team Lead and Full Stack Developer, utilizing the Frappe Framework to build custom web applications, and managing a Frappe development team. Leading projects from conception to deployment while mentoring junior developers.
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">November 2019 - September 2021</div>
+                        <div class="experience-title">Software Developer</div>
+                        <div class="experience-company">Ideenkreise Tech Pvt Ltd, Muvattupuzha</div>
+                        <div class="experience-description">
+                            Worked as front-end developer specializing in Mobile Application and Web Application development utilizing React Native and Vue.js. Contributed to multiple client projects with focus on user experience and performance optimization.
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">August 2016 - October 2019</div>
+                        <div class="experience-title">System Administrator</div>
+                        <div class="experience-company">Holy Cross Multi-Speciality Hospital, Adoor</div>
+                        <div class="experience-description">
+                            Managed the entire IT infrastructure including computers, printers, servers, and CCTV systems across the hospital. Ensured 99.9% uptime and implemented security protocols to protect sensitive medical data.
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Note Approval System (Nitta Gelatin India Ltd.)</strong> – Workflow-based approval tool handling financial and administrative notes.</li>
-      <li><strong>Expense Manager (Eastern)</strong> – Migrated Vue.js app to Frappe with backend logic and mobile syncing.</li>
-      <li><strong>CRM & Project Management (Faboolux Interiors)</strong> – Automation for leads, follow-ups, and project workflows.</li>
-      <li><strong>Crop Management App</strong> – React Native app with offline capabilities and server sync.</li>
-      <li><strong>AR Advertisement App</strong> – Unity-based AR app delivering immersive ad experiences.</li>
-    </ul>
-  </section>
+            <section id="projects" class="section">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Note Approval System</div>
+                            <div class="project-client">Nitta Gelatin India Ltd.</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                Developed a comprehensive workflow-driven approval system for financial and non-financial notes with automated user assignment based on key data parameters.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Frappe</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Workflow Automation</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>Diploma in Computer Engineering</strong><br>Government Polytechnic College, Kerala, India (2013–2016)</p>
-  </section>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Expense Manager</div>
+                            <div class="project-client">Eastern</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                Upgraded a Vue.js-based system to Frappe framework, developing the mobile application backend and admin panel with customized business logic.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Frappe</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Mobile Backend</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sagarkachappilly@gmail.com" style="color:var(--primary)">sagarkachappilly@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/sagar-k-s-1bab56198" target="_blank" style="color:var(--primary)">linkedin.com/in/sagar-k-s-1bab56198</a></p>
-    <p>Phone: +91 77361 05735</p>
-  </section>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">CRM & Project Management</div>
+                            <div class="project-client">Faboolux Interiors</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                Built a comprehensive system for lead management, follow-ups, and project conversion with workflow automation and real-time collaboration features.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Frappe</span>
+                                <span class="tech-tag">CRM</span>
+                                <span class="tech-tag">Project Management</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <footer>
-    © 2025 Sagar Kachappilly Sabu — Built with HTML, CSS & JS
-  </footer>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Crop Management App</div>
+                            <div class="project-client">Agriculture Solution</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                Developed the complete front-end with offline data storage using Realm DB and server synchronization capabilities for agricultural data management.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Realm DB</span>
+                                <span class="tech-tag">Offline Storage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">AR Advertisement App</div>
+                            <div class="project-client">Client Project</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                Created an innovative Augmented Reality-based advertisement application using Unity Studio, delivering immersive marketing experiences.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Unity Studio</span>
+                                <span class="tech-tag">Augmented Reality</span>
+                                <span class="tech-tag">3D Graphics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Real-time Quiz Game</div>
+                            <div class="project-client">QuizApp</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                Contributed to front-end UI development and implemented key real-time gaming functionalities for an interactive quiz application.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Real-time Gaming</span>
+                                <span class="tech-tag">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div class="education-card">
+                    <div class="education-degree">Diploma in Computer Engineering</div>
+                    <div class="education-years">2013 - 2016</div>
+                    <div class="education-institution">Government Polytechnic College, Kerala</div>
+                    <div class="education-board">Board of Technical Education, Kerala</div>
+                </div>
+            </section>
+
+            <section id="interests" class="section">
+                <h2>Interests & Hobbies</h2>
+                <div class="interests-section">
+                    <p style="font-size: 1.2em; color: #555; margin-bottom: 20px;">When I'm not coding, I enjoy staying active and engaging in sports that keep me energized and focused.</p>
+                    <div class="interests-icons">
+                        <div class="interest-item">
+                            <div class="interest-icon">🏸</div>
+                            <div class="interest-name">Badminton</div>
+                        </div>
+                        <div class="interest-item">
+                            <div class="interest-icon">⚽</div>
+                            <div class="interest-name">Football</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all nav buttons
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked nav button
+            event.target.classList.add('active');
+        }
+
+        // Add smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate profile image on hover
+            const profileImage = document.querySelector('.profile-image');
+            profileImage.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) rotate(10deg)';
+            });
+            profileImage.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+
+            // Add click animation to project cards
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Animate skill tags on scroll
+            const skillTags = document.querySelectorAll('.skill-tag');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.5s ease-in forwards';
+                    }
+                });
+            });
+
+            skillTags.forEach(tag => {
+                observer.observe(tag);
+            });
+        });
+    </script>
 </body>
 </html>
